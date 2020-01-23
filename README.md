@@ -17,6 +17,6 @@ Simply clone this project to your local workspace, switch into the project root 
 3. Player detail page with delete function.
 
 ## Update host_name and context_root per needs
-This project would call server-side REST API provided in project kinduct, the default hostname is `http://localhost/` and project root is `kinduct/`, if the hostname, port number and context root sis different in your local, please update accordinly to ensure we can call REST API as expected.
-You can update once in file `$PROJECT/src/components/global.js`, that would be work for the whole project.
+This project would call server-side REST API provided in project kinduct, the default hostname is `http://localhost/` and project root is `kinduct/`, if the hostname, port number and context root are different in your local, please update accordinly to ensure we can call REST API as expected.
+You can update in file `$PROJECT/src/components/global.js`, that would be work for the whole project.
 
