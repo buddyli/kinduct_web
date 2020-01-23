@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { host_name, context_root } from './global.js';
 
 class Create extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Create extends React.Component {
   }
   handleSubmit(event) {
       event.preventDefault();
-	  fetch('http://localhost/kinduct/index.php/athletesrestcontroller/add_athlete', {
+	  fetch(`${host_name}${context_root}athletesrestcontroller/add_athlete`, {
 			method: 'POST',
 			body: JSON.stringify({
                 name: this.state.name,

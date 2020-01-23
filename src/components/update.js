@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
+import { host_name, context_root } from './global.js';
 
 class Update extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class Update extends React.Component {
   }
   
   componentDidMount() {
-	fetch('http://localhost/kinduct/index.php/athletesrestcontroller/athlete?id=' + this.props.match.params.id)
+	fetch(`${host_name}${context_root}athletesrestcontroller/athlete?id=` + this.props.match.params.id)
 		.then(response => {
 			return response.json();
 		}).then(result => {
@@ -34,7 +35,7 @@ class Update extends React.Component {
 
   handleSubmit(event) {
 	  event.preventDefault();
-	  fetch('http://localhost/kinduct/index.php/athletesrestcontroller/update_athlete', {
+	  fetch(`${host_name}${context_root}athletesrestcontroller/update_athlete`, {
 			method: 'PUT',
 			body: JSON.stringify({
 							id: this.state.id,
@@ -54,7 +55,7 @@ class Update extends React.Component {
 
   deleteathlete(id) {
     if(window.confirm("Are you sure want to delete?")) {
-        fetch('http://localhost/kinduct/index.php/athletesrestcontroller/delete_athlete/' + id, {
+        fetch(`${host_name}${context_root}athletesrestcontroller/delete_athlete/` + id, {
                 method : 'DELETE'
             }).then(response => {
                 console.log(response);

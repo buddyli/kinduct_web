@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { host_name, context_root } from './global.js';
 
 class Upload extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Upload extends React.Component {
 		let data = new FormData();
 		data.append('fileToUpload', this.state.fileToUpload);
 
-		fetch('http://localhost/kinduct/index.php/athletesrestcontroller/upload_athlete', {
+		fetch(`${host_name}${context_root}athletesrestcontroller/upload_athlete`, {
 			method: 'POST',
 			body: data
 		}).then(response => {
@@ -37,7 +38,7 @@ class Upload extends React.Component {
 
     render() {
         return(
-            <form action="http://localhost/kinduct/upload" method="post" encType="multipart/form-data">
+            <form action="" method="post" encType="multipart/form-data">
                 <div id="container">
                     <h1>Upload a File</h1>
                     <h4>{this.state.msg}</h4>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { host_name, context_root } from './global.js';
 
 class Athletes extends React.Component {
 	constructor(props) {
@@ -14,7 +15,7 @@ class Athletes extends React.Component {
 	}
 	
 	componentDidMount() {
-		fetch('http://localhost/kinduct/index.php/athletesrestcontroller/athletes')
+		fetch(`${host_name}${context_root}athletesrestcontroller/athletes`)
 		.then(response => {
 			return response.json();
 		}).then(result => {
@@ -27,12 +28,12 @@ class Athletes extends React.Component {
 	
 	deleteathlete(id) {
 		if(window.confirm("Are you sure want to delete?")) {
-			fetch('http://localhost/kinduct/index.php/athletesrestcontroller/delete_athlete/' + id, {
+			fetch(`${host_name}${context_root}athletesrestcontroller/delete_athlete/` + id, {
 					method : 'DELETE'
 				}).then(response => { 
 					console.log(response);
 					alert("athlete deleted successfully");
-					fetch('http://localhost/kinduct/index.php/athletesrestcontroller/athletes')
+					fetch(`${host_name}${context_root}athletesrestcontroller/athletes`)
 					.then(response => {
 						return response.json();
 					}).then(result => {
