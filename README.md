@@ -3,7 +3,7 @@ This project provides rich UI from where we can upload players records file in J
 
 ## Project pre-requires
 1. npm v6.13.4+
-2. NodeJS  V12.14.1+
+2. NodeJS v12.14.1+
 3. React Router
 React Router provides routing capabilities to single-page apps(SPA) built in React, and what makes it nice is that extends what you already know about React in familiar ways to give you all of this routing awesomeness.
 Pease install it via command `npm i react-router-dom --save` in terminal.
